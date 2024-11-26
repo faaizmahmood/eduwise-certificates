@@ -1,0 +1,43 @@
+
+
+
+.home {
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    button {
+        padding: 8px 30px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        background: #0071DC;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
