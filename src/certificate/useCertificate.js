@@ -20,7 +20,7 @@ const useCertificate = () => {
         (async () => {
             try {
                 // Add 'await' to wait for the fetch call to resolve
-                const response = await fetch(`http://localhost:5000/api/certificate/single-certificate/${location.pathname.slice(13)}`);
+                const response = await fetch(`https://eduwise-708c009023f3.herokuapp.com/api/certificate/single-certificate/${location.pathname.slice(13)}`);
 
                 // Check if the response status is 404
                 if (response.status === 404) {
