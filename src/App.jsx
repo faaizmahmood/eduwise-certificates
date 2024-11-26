@@ -14,9 +14,9 @@ function App() {
     <>
       <Routes>
 
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Home />} />
 
-        <Route path='/:certificateID' element={<Certificate />} />
+        <Route path='/certificate/:certificateID' element={<Certificate />} />
 
         <Route path='*' element={<Navigate to='/' />} />
 

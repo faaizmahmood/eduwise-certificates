@@ -20,11 +20,11 @@ const useCertificate = () => {
         (async () => {
             try {
                 // Add 'await' to wait for the fetch call to resolve
-                const response = await fetch(`http://localhost:5000/api/certificate/single-certificate${location?.pathname}`);
+                const response = await fetch(`http://localhost:5000/api/certificate/single-certificate/${location.pathname.slice(13)}`);
 
                 // Check if the response status is 404
                 if (response.status === 404) {
-                    
+
                     toast.error("Certificate not Found!");
 
                     setLoading(false);
