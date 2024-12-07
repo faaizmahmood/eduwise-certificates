@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "eduwise-certificate": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.1",
+    "react-s3": "^1.3.1",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.6",
     "sass-embedded": "^1.81.0"
