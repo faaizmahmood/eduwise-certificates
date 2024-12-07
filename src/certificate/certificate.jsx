@@ -49,7 +49,7 @@ function Certificate() {
                                         <div className='my-3 d-flex align-items-center'>
                                             <img src={pp} alt='EduWise - E-learning PlateForm' />
                                             <div className='ms-3'>
-                                                <h4>{certificateItem?.student?.name || 'N/A'}</h4>
+                                                <h4>{certificateItem?.student?.student_name || 'N/A'}</h4>
                                                 <p>{certificateItem?.title}</p>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@ function Certificate() {
 
                                         {/* <a href='https://www.eduwiseapp.tech/' className='mt-3'><button>Go to EduWise</button></a> */}
                                     </div>
-                                    
+
                                     <div className={` col-6 h-100`}>
                                         {/* <img src={certificate_dummy} alt='Eduwise Img' /> */}
                                         <div className={`${styles.certificate_img}`}>
@@ -97,16 +97,16 @@ function Certificate() {
                                             <p className='mt-3'>Top Skills Covered</p>
 
                                             <div className={`${styles.btn_group} d-flex justify-content-center mt-3`}>
-                                            {
-                                                certificateItem?.course?.tags?.map((ele, ind) => {
-                                                    return (
-                                                        <>
-                                                            <button key={ind}>{ele}</button>
-                                                        </>
-                                                    )
-                                                })
-                                            }
-                                        </div>
+                                                {
+                                                    certificateItem?.course?.tags?.map((ele, ind) => {
+                                                        return (
+                                                            <>
+                                                                <button key={ind}>{ele}</button>
+                                                            </>
+                                                        )
+                                                    })
+                                                }
+                                            </div>
                                         </div>
 
                                     </div>
