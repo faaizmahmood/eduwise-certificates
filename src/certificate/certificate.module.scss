@@ -46,6 +46,12 @@
         justify-content: center;
         align-items: center;
 
+        & img:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
         h4 {
             color: #262626;
             font-size: 18px;
@@ -67,6 +73,7 @@
         .btn_group {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .download_btn {
@@ -89,17 +96,20 @@
             width: 100%;
             height: 350px;
             padding: 20px;
-            border: 10px solid #0072dca8;
+            border: 3px solid #0072dca8;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             background: linear-gradient(135deg, #f4f9ff 0%, #ffffff 100%);
             text-align: center;
             font-family: 'Georgia', serif;
+            // position: relative;
+            z-index: 999;
 
             h1 {
                 font-size: 24px;
                 font-weight: bold;
                 margin: 20px 0;
                 color: #031F42;
+                z-index: 999;
             }
 
             p {
@@ -112,6 +122,14 @@
                 font-size: 20px;
                 font-weight: 700;
                 color: #0071DC;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 150px;
+                // z-index: -999;
             }
 
             .course-title {

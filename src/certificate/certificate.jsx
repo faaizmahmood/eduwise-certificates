@@ -4,11 +4,11 @@ import styles from './certificate.module.scss'
 import useCertificate from './useCertificate'
 import { BarLoader } from 'react-spinners'
 import certificate_dummy from '../../public/images/certificate_dummy.jpg'
-import pp from '../../public/images/profileImg.png'
+import certificate_line from '../../public/images/certificate_line.png'
 
 function Certificate() {
 
-    const { loading, certificateItem } = useCertificate()
+    const { loading, certificateItem, sectionRef, handleDownload } = useCertificate()
 
     const convertDate = (isoDate) => {
 
@@ -47,7 +47,7 @@ function Certificate() {
                                         <h2>Certificate recipient</h2>
 
                                         <div className='my-3 d-flex align-items-center'>
-                                            <img src={pp} alt='EduWise - E-learning PlateForm' />
+                                            <img src={"https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp"} alt='EduWise - E-learning PlateForm' />
                                             <div className='ms-3'>
                                                 <h4>{certificateItem?.student?.student_name || 'N/A'}</h4>
                                                 <p>{certificateItem?.title}</p>
@@ -72,26 +72,14 @@ function Certificate() {
                                             }
                                         </div>
 
-                                        <button className={`${styles.download_btn} mt-4`}>Download Certificate <i className="fa-regular fa-download ms-2"></i></button>
+                                        <button className={`${styles.download_btn} mt-4`} onClick={handleDownload}>Download Certificate <i className="fa-regular fa-download ms-2"></i></button>
 
-                                        {/* <p >The Certificate of <b>{certificateItem?.title}</b> is produly represented to <b>{certificateItem?.student?.name}. </b>
-                                            <br />
-                                            And the ID of certificate is <b>{certificateItem?._id}</b>
-                                            <br />
-                                            Instructor is <b>{certificateItem?.course?.instructor?.name}</b>
-                                        </p> */}
-
-                                        {/* <a href='https://www.eduwiseapp.tech/' className='mt-3'><button>Go to EduWise</button></a> */}
                                     </div>
 
-                                    <div className={` col-6 h-100`}>
-                                        {/* <img src={certificate_dummy} alt='Eduwise Img' /> */}
-                                        <div className={`${styles.certificate_img}`}>
+                                    <div className={`col-6 h-100 p-2`} style={{background:'linear-gradient(135deg, #f4f9ff 0%, #ffffff 100%)', position:'relative', zIndex:'1000'}}>
+                                        <div className={`${styles.certificate_img}`} ref={sectionRef}>
                                             <h1>{certificateItem?.title || 'Course Title'}</h1>
-                                            <p>Learning Path Completed by {certificateItem?.student?.name || 'Recipient Name'}</p>
-                                            {/* <p className="name">{certificateItem?.student?.name || 'Recipient Name'}</p> */}
-                                            {/* <p>has successfully completed the course</p> */}
-                                            {/* <p className="course-title">{certificateItem?.title || 'Course Title'}</p> */}
+                                            <p>Learning Path Completed by {certificateItem?.student?.student_name || 'Recipient Name'}</p>
                                             <p className="issue-date">Date: {convertDate(certificateItem?.issueDate || 'N/A')} - {certificateItem?.course?.duration}</p>
 
                                             <p className='mt-3'>Top Skills Covered</p>
@@ -107,7 +95,11 @@ function Certificate() {
                                                     })
                                                 }
                                             </div>
+                                            {/* <img src={certificate_line}/> */}
                                         </div>
+                                        
+
+                                      
 
                                     </div>
                                 </div>

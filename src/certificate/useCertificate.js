@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import html2canvas from "html2canvas";
+import jsPDF from 'jspdf'
 
 
 const useCertificate = () => {
 
     const [loading, setLoading] = useState(false);
+
+    const sectionRef = useRef();
 
     const [certificateItem, setCertificateItem] = useState([])
 
@@ -56,9 +60,31 @@ const useCertificate = () => {
 
     }, [])
 
+
+    const handleDownload = async () => {
+        const element = sectionRef.current;
+
+        // Convert HTML section to canvas
+        const canvas = await html2canvas(element);
+
+        // Get image data from canvas
+        const imgData = canvas.toDataURL("image/png");
+
+        // Create a PDF using jsPDF
+        const pdf = new jsPDF();
+        const imgWidth = pdf.internal.pageSize.getWidth();
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+        pdf.save("certificate.pdf");
+    };
+
+
     return {
         loading,
-        certificateItem
+        certificateItem,
+        handleDownload,
+        sectionRef
     }
 }
 
