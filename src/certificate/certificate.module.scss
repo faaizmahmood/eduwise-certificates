@@ -92,6 +92,22 @@
             align-items: center;
         }
 
+        .view_btn{
+            padding: 10px 30px;
+            border: 1px solid #0071DC;
+            outline: none;
+            border-radius: 30px;
+            background: transparent;
+            color: #0071DC;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .certificate_img {
             width: 100%;
             height: 350px;
@@ -192,6 +208,116 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+}
+
+
+
+.main_certificate {
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .main_certificate_wrapper {
+
+        background-color: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        height: 80%;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1000;
+        // display: none;
+
+        .main_certificate_inner_wrapper {
+            border: 2px solid #F5D766;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: transparent;
+            z-index: 999;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .logo {
+                width: 50px;
+            }
+
+            h2 {
+                color: #262626;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                width: 75%;
+            }
+
+            .certificate_description {
+                width: 50%;
+                color: #b2b2b2;
+            }
+
+            .top_skills {
+                color: #b2b2b2;
+            }
+
+            .btn_group {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+
+                button {
+                    padding: 7px 20px;
+                    border: 1px solid #0071DC;
+                    outline: none;
+                    border-radius: 30px;
+                    background: transparent;
+                    color: #0071DC;
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .certificate_id {
+                font-size: 11px;
+            }
+
+        }
+
+        .certificate_line_1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            z-index: -999;
+        }
+
+        .certificate_line_2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 20%;
+            z-index: -999;
+            transform: rotate(180deg);
+        }
+
     }
 
 }
