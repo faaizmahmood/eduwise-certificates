@@ -116,7 +116,7 @@ function Certificate() {
 
                                     <img src={logo} className={`${styles.logo}`} alt="EduWise Logo" />
 
-                                    <h2 className='mt-3'>Introduction to Web Design and Development</h2>
+                                    <h2 className='mt-3'>{certificateItem?.title}</h2>
 
                                     <p className={`${styles.certificate_description}`}>Course completed by {certificateItem?.student?.student_name || 'Recipient Name'}
 
